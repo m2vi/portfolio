@@ -29,7 +29,7 @@ const Card = ({ discord, me }) => {
           <SpotifyActivity discord={discord} />
         </>
       ) : (
-        (discord.data.activities as any[]).filter((a) => a.type === 0).slice(0, 1) && (
+        (discord.data.activities as any[]).filter((a) => a.type === 0).slice(0, 1).length > 0 && (
           <>
             <Divider className='my-4' />
             <DiscordActivity discord={discord} />

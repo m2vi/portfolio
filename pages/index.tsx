@@ -11,11 +11,14 @@ const Home: NextPage = ({ favicon, discord: initalDiscord, me }: any) => {
 
   useEffect(() => {
     const interval = setInterval(async () => {
-      await basicFetch('/api/discord').then((data) => {
+      try {
+        const data = await basicFetch('/api/discord');
         if (!data.success) return;
 
         setDiscord(data);
-      });
+      } catch (error) {
+        console.log(error.message);
+      }
     }, 1024);
 
     return () => clearInterval(interval);
