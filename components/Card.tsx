@@ -15,6 +15,7 @@ const Card = ({ discord, me }) => {
           width='128px'
           quality='100'
           className='rounded no-drag select-none bg-primary-700'
+          alt='Discord Avatar'
         />
       </div>
       <div>

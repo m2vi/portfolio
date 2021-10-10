@@ -29,7 +29,7 @@ const Home: NextPage = ({ favicon, discord: initalDiscord, me }: any) => {
       <Head>
         <link rel='icon' type='image/png' href={favicon} />
       </Head>
-      <NextSeo title={discord.data.discord_user.username} />
+      <NextSeo title={discord.data.discord_user.username} description="Hi, I'm m2vi and this is my portfolio page I made with Next.js" />
       <div className='h-screen w-screen grid place-items-center'>
         <Card discord={discord} me={me} />
       </div>
@@ -41,7 +41,7 @@ export default Home;
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   const discord = await basicFetch(`${b(req)}/api/discord`);
-  const me = await basicFetch(`${b(req)}/api/me`);
+  const me = JSON.parse(process.env.config);
 
   return {
     props: {
