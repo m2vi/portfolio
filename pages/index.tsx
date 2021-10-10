@@ -29,7 +29,12 @@ const Home: NextPage = ({ favicon, discord: initalDiscord, me }: any) => {
       <Head>
         <link rel='icon' type='image/png' href={favicon} />
       </Head>
-      <NextSeo title={discord.data.discord_user.username} description="Hi, I'm m2vi and this is my portfolio page I made with Next.js" />
+      <NextSeo
+        title={discord.data.discord_user.username}
+        description="Hi, I'm m2vi and this is my portfolio page I made with Next.js"
+        noindex={false}
+        nofollow={false}
+      />
       <div className='h-screen w-screen grid place-items-center'>
         <Card discord={discord} me={me} />
       </div>
