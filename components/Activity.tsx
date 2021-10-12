@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export const DiscordActivity = ({ discord }) => {
   const main = (discord.data.activities as any[]).filter((a) => a.type === 0).slice(0, 1);
   if (!main) return null;
@@ -12,7 +10,7 @@ export const DiscordActivity = ({ discord }) => {
         return (
           <div className='w-full bg-primary-700 mb-2 last:mb-0 h-10/5 px-2 flex justify-start items-center rounded-8' key={i}>
             <div className='aspect-1 h-8 mr-4'>
-              <Image src={large_image} alt='Activity Large Image' height='40px' width='40px' sizes='6' className='rounded-5' />
+              <img src={large_image} alt='Activity Large Image' height='40px' width='40px' sizes='6' className='rounded-5' />
             </div>
             <div className='h-8 flex justify-start flex-col items-start'>
               <p
@@ -40,7 +38,7 @@ export const SpotifyActivity = ({ discord }) => {
     <div className='flex flex-col w-full'>
       <div className='w-full bg-primary-700 mb-2 last:mb-0 h-10/5 px-2 flex justify-start items-center rounded-8'>
         <div className='aspect-1 h-8 mr-4'>
-          <Image src={spotify.album_art_url} alt='Album Art' height='40px' width='40px' sizes='6' className='rounded-5' />
+          <img src={spotify.album_art_url} alt='Album Art' height='40px' width='40px' sizes='6' className='rounded-5' />
         </div>
         <div className='h-8 flex justify-start flex-col items-start'>
           <p
