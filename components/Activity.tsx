@@ -12,14 +12,14 @@ export const DiscordActivity = ({ discord }) => {
             <div className='aspect-1 h-8 mr-4'>
               <img src={large_image} alt='Activity Large Image' height='40px' width='40px' sizes='6' className='rounded-5' />
             </div>
-            <div className='h-8 flex justify-start flex-col items-start'>
+            <div className='text-left h-8 flex justify-start flex-col items-start overflow-hidden'>
               <p
-                className='font-semibold text-primary-200 l-1 overflow-hidden overflow-ellipsis whitespace-nowrap'
+                className='w-full font-semibold text-primary-200 l-1 overflow-hidden overflow-ellipsis whitespace-nowrap'
                 style={{ marginTop: '5px' }}
               >
                 {activity.name}
               </p>
-              <p className='text-primary-300 l-1 overflow-hidden overflow-ellipsis whitespace-nowrap' style={{ marginTop: '2px' }}>
+              <p className='w-full text-primary-300 l-1 overflow-hidden overflow-ellipsis whitespace-nowrap' style={{ marginTop: '2px' }}>
                 {activity.details}
               </p>
             </div>
@@ -40,14 +40,14 @@ export const SpotifyActivity = ({ discord }) => {
         <div className='aspect-1 h-8 mr-4'>
           <img src={spotify.album_art_url} alt='Album Art' height='40px' width='40px' sizes='6' className='rounded-5' />
         </div>
-        <div className='h-8 flex justify-start flex-col items-start'>
+        <div className='text-left h-8 flex justify-start flex-col items-start overflow-hidden'>
           <p
-            className='font-semibold text-primary-200 l-1 overflow-hidden overflow-ellipsis whitespace-nowrap'
+            className='w-full font-semibold text-primary-200 l-1 overflow-hidden overflow-ellipsis whitespace-nowrap'
             style={{ marginTop: '5px' }}
           >
             {spotify.song}
           </p>
-          <p className='text-primary-300 l-1 overflow-hidden overflow-ellipsis whitespace-nowrap' style={{ marginTop: '2px' }}>
+          <p className='w-full text-primary-300 l-1 overflow-hidden overflow-ellipsis whitespace-nowrap' style={{ marginTop: '2px' }}>
             {spotify.artist}
           </p>
         </div>
