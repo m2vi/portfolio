@@ -25,21 +25,18 @@
 
   --color-secondary: var(--m2v-red);
 
-  --color-primary-100: #fffefe;
-  --color-primary-200: #e5e5e5;
-  --color-primary-300: #93a6c0;
-  --color-primary-400: rgba(255, 255, 255, 0.2);
-  --color-primary-500: hsl(215, 30%, 23%);
-  --color-primary-600: hsl(215, 24%, 16%);
-  --color-primary-700: hsl(217, 30%, 25%);
-  --color-primary-800: #1e2838;
-  --color-primary-900: #141724;
+  --color-primary-100: hsl(0, 100%, 100%);
+  --color-primary-200: hsl(0, 0%, 90%);
+  --color-primary-300: hsl(260, 25%, 70%);
+  --color-primary-500: hsl(260, 25%, 20%);
+  --color-primary-700: hsl(260, 25%, 15%);
+  --color-primary-800: hsl(260, 25%, 10%);
+  --color-primary-900: hsl(260, 25%, 5%);
 }
 
 .dTGAUq {
   margin: 0 !important;
 }
-
 h1,
 h2,
 h3,
