@@ -16,7 +16,7 @@ const Card = ({ initalDiscord }: { initalDiscord: LanyardResponse }) => {
       <div className='rounded w-128 h-128 relative mb-2 select-none bg-primary-700 overflow-hidden'>
         {discord ? (
           <img
-            src={`https://cdn.discordapp.com/avatars/${discord?.discord_user?.id}/${discord?.discord_user?.avatar}.png?size=256`}
+            src={`https://cdn.discordapp.com/avatars/${discord?.discord_user?.id}/${discord?.discord_user?.avatar}.webp?size=256`}
             height='128px'
             width='128px'
             className='no-drag'
