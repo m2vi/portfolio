@@ -2,6 +2,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['cdn.discordapp.com', 'i.scdn.co', 'avatars.githubusercontent.com'],
+    domains: ['cdn.discordapp.com'],
   },
+  productionBrowserSourceMaps: true,
 };

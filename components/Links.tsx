@@ -1,20 +1,27 @@
-import { FaDiscord, FaSpotify, FaGithubAlt, FaSteam } from 'react-icons/fa';
+import { useData } from '@context/data';
+import { FaDiscord, FaGithubAlt, FaSteam, FaSpotify } from 'react-icons/fa';
 
-const Links = ({ me }) => {
+const Links = () => {
+  const { data } = useData();
+
+  const icons = {
+    FaDiscord,
+    FaGithubAlt,
+    FaSteam,
+    FaSpotify,
+  };
+
   return (
     <div className='grid grid-cols-4 place-items-center w-full px-4 text-accent'>
-      <a href={`https://discord.com/users/${me.discord}`} title='Discord'>
-        <FaDiscord className='w-5 h-5 cursor-pointer hover:text-accent-hover' />
-      </a>
-      <a href={`https://github.com/${me.github}`} title='GitHub'>
-        <FaGithubAlt className='w-5 h-5 cursor-pointer hover:text-accent-hover' />
-      </a>
-      <a href={`https://steamcommunity.com/profiles/${me.steam}`} title='Steam'>
-        <FaSteam className='w-5 h-5 cursor-pointer hover:text-accent-hover' />
-      </a>
-      <a href={`https://open.spotify.com/user/${me.spotify}`} title='Spotify'>
-        <FaSpotify className='w-5 h-5 cursor-pointer hover:text-accent-hover' />
-      </a>
+      {Object.entries(data.config).map(([service, { id, url, icon }], i) => {
+        const Icon = icons?.[icon];
+
+        return (
+          <a href={`${url}${id}`} title={service} key={i}>
+            <Icon className='w-5 h-5 cursor-pointer hover:text-accent-hover' />
+          </a>
+        );
+      })}
     </div>
   );
 };

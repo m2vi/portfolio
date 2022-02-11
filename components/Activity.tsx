@@ -1,69 +1,36 @@
-export const DiscordActivity = ({ discord }) => {
-  const main = (discord.data.activities as any[]).filter((a) => a.type === 0).slice(0, 1);
-  if (!main) return null;
+import { useData } from '@context/data';
+import api from '@utils/frontend/main';
+import Divider from './Divider';
+
+export const Activity = () => {
+  const { data } = useData();
+  const activity = api.adaptActivity(data?.lanyard?.data);
+  if (!activity) return null;
 
   return (
-    <div className='flex flex-col w-full'>
-      {main.map((activity, i) => {
-        const large_image = `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`;
-
-        return (
-          <div className='w-full bg-primary-700 mb-2 last:mb-0 h-10/5 px-2 flex justify-start items-center rounded-8' key={i}>
-            <div className='aspect-1 h-8 mr-4'>
-              <img src={large_image} alt='Activity Large Image' height='40px' width='40px' sizes='6' className='rounded-5' />
-            </div>
-            <div className='text-left h-8 flex justify-start flex-col items-start overflow-hidden'>
-              <p
-                title={activity.name}
-                className='w-full font-semibold text-primary-200 l-1 overflow-hidden overflow-ellipsis whitespace-nowrap'
-                style={{ marginTop: '5px' }}
-              >
-                {activity.name}
-              </p>
-              <p
-                title={activity.details}
-                className='w-full text-primary-300 l-1 overflow-hidden overflow-ellipsis whitespace-nowrap'
-                style={{ marginTop: '2px' }}
-              >
-                {activity.details}
-              </p>
-            </div>
+    <>
+      <Divider className='my-4' />
+      <div className='flex flex-col w-full'>
+        <div className='w-full bg-primary-700 mb-2 last:mb-0 h-10/5 px-2 flex justify-start items-center rounded-8'>
+          <div className='aspect-1 h-8 mr-4'>
+            <img src={activity?.image} alt='Activity Large Image' height='40px' width='40px' sizes='6' className='rounded-5' />
           </div>
-        );
-      })}
-    </div>
-  );
-};
-
-export const SpotifyActivity = ({ discord }) => {
-  const spotify = discord.data.spotify;
-  if (!spotify) return null;
-
-  return (
-    <div className='flex flex-col w-full'>
-      <div className='w-full bg-primary-700 mb-2 last:mb-0 h-10/5 px-2 flex justify-start items-center rounded-8'>
-        <div className='aspect-1 h-8 mr-4'>
-          <img src={spotify.album_art_url} alt='Album Art' height='40px' width='40px' sizes='6' className='rounded-5' />
-        </div>
-        <div className='text-left h-8 flex justify-start flex-col items-start overflow-hidden'>
-          <p
-            className='w-full font-semibold text-primary-200 l-1 overflow-hidden overflow-ellipsis whitespace-nowrap'
-            style={{ marginTop: '5px' }}
-            title={spotify.song}
-          >
-            {spotify.song}
-          </p>
-          <p
-            title={spotify.artist}
-            className='w-full text-primary-300 l-1 overflow-hidden overflow-ellipsis whitespace-nowrap'
-            style={{ marginTop: '2px' }}
-          >
-            {spotify.artist}
-          </p>
+          <div className='text-left h-8 flex justify-center flex-col items-start overflow-hidden'>
+            <p
+              title={activity?.name}
+              className='w-full font-semibold text-primary-200 leading-5 overflow-hidden overflow-ellipsis whitespace-nowrap'
+            >
+              {activity?.name}
+            </p>
+            <p
+              title={activity?.details}
+              className='w-full font-medium text-primary-300 leading-5 overflow-hidden overflow-ellipsis whitespace-nowrap'
+            >
+              {activity?.details}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
-
-export default SpotifyActivity;

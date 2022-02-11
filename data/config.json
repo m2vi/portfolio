@@ -1,0 +1,22 @@
+{
+  "discord": {
+    "url": "https://discord.com/users/",
+    "id": "701400631662870609",
+    "icon": "FaDiscord"
+  },
+  "github": {
+    "url": "https://github.com/",
+    "id": "m2vi",
+    "icon": "FaGithubAlt"
+  },
+  "spotify": {
+    "url": "https://open.spotify.com/user/",
+    "id": "racuhilmesci7mqrzhgbydb47",
+    "icon": "FaSteam"
+  },
+  "steam": {
+    "url": "https://open.spotify.com/user/",
+    "id": "76561198331784820",
+    "icon": "FaSpotify"
+  }
+}

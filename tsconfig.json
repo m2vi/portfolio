@@ -23,10 +23,10 @@
       "@projects/*": ["projects/*"],
       "@public/*": ["public/*"],
       "@styles/*": ["styles/*"],
-      "@Types/*": ["types/*"],
-      "@utils/*": ["utils/*"],
-      "@models/*": ["models/*"]
-    }
+
+      "@utils/*": ["utils/*"]
+    },
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
