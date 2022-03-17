@@ -1,14 +1,7 @@
 module.exports = {
   darkMode: 'class',
-  purge: ['./**/*.tsx', './public/index.html'],
+  content: ['./**/*.tsx', './public/index.html'],
   theme: {
-    fontFamily: {
-      sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
-      oswald: ['Oswald', 'Roboto', 'sans-serif'],
-      loto: ['Lato', 'Roboto', 'sans-serif'],
-      roboto: ['Roboto Condensed', 'sans-serif'],
-      inter: ['Inter', 'Roboto', 'sans-serif'],
-    },
     fontSize: {
       tiny: '0.625rem',
       xs: '.75rem',

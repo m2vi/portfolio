@@ -23,7 +23,7 @@
       "@projects/*": ["projects/*"],
       "@public/*": ["public/*"],
       "@styles/*": ["styles/*"],
-
+      "@data/*": ["data/*"],
       "@utils/*": ["utils/*"]
     },
     "incremental": true

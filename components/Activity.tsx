@@ -1,6 +1,7 @@
-import { useData } from '@context/data';
 import api from '@utils/frontend/main';
-import Divider from './Divider';
+import { useData } from '@context/data';
+
+import Divider from '@components/Divider';
 
 export const Activity = () => {
   const { data } = useData();
@@ -34,3 +35,5 @@ export const Activity = () => {
     </>
   );
 };
+
+export default Activity;

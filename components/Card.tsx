@@ -1,8 +1,9 @@
 import { useData } from '@context/data';
-import { Activity } from './Activity';
-import Divider from './Divider';
-import Links from './Connections';
 import { LanyardResponse } from 'react-use-lanyard';
+
+import Activity from '@components/Activity';
+import Divider from '@components/Divider';
+import Links from '@components/Connections';
 
 const Card = ({ data }: { data: LanyardResponse }) => {
   const {

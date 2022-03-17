@@ -1,5 +1,5 @@
 import { ConfigProps } from '@utils/types';
-import configJson from '../../data/config.json';
+import configJson from '@data/config.json';
 
 class Api {
   get config(): ConfigProps {

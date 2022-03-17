@@ -1,10 +1,12 @@
 import Card from '@components/Card';
 import { useData } from '@context/data';
-import { b } from '@utils/index';
+import { b } from '@utils/fetch';
 
 import api from '@utils/backend/main';
+
 import { avatarUrl } from '@utils/discord';
 import { basicFetch } from '@utils/fetch';
+
 import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import { useEffect } from 'react';
@@ -32,7 +34,7 @@ const Home: NextPage = ({ favicon, discord_id, config, discord }: any) => {
     <div>
       <Head>
         <title>{data?.lanyard?.data?.discord_user?.username}</title>
-        <link rel='icon' type='image/png' href={favicon} />
+        <link rel='icon' type='image/webp' href={favicon} />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://card.m2vi.me/' />
         <meta property='og:title' content='Portfolio - m2vi' />
