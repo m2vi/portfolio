@@ -1,5 +1,4 @@
 import Card from '@components/Card';
-import { useData } from '@context/data';
 import { b } from '@utils/fetch';
 
 import api from '@utils/backend/main';
@@ -9,40 +8,30 @@ import { basicFetch } from '@utils/fetch';
 
 import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
-import { useEffect } from 'react';
 import { useLanyard } from 'react-use-lanyard';
-import Text from '@components/Info';
+import Text from '@components/BottomText';
 
-const Home: NextPage = ({ favicon, discord_id, config, discord }: any) => {
-  const { data, update } = useData();
+const Home: NextPage = ({ avatarUrl, discord_id, config, discord }: any) => {
   const { data: lanyard } = useLanyard({
     userId: discord_id,
     socket: false,
   });
 
-  useEffect(() => {
-    update({ lanyard: discord, config });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    update({ lanyard, config });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lanyard]);
+  const data = lanyard ? lanyard : discord;
 
   return (
     <div>
       <Head>
-        <title>{data?.lanyard?.data?.discord_user?.username}</title>
-        <link rel='icon' type='image/webp' href={favicon} />
+        <title>{data?.data?.discord_user?.username}</title>
+        <link rel='icon' type='image/webp' href={avatarUrl} />
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:site' content='https://card.m2vi.me/' />
         <meta name='twitter:title' content='m2vi' />
         <meta name='twitter:description' content={`My portfolio website I made with Next.js and Tailwind`} />
-        <meta name='twitter:image' content={favicon}></meta>
+        <meta name='twitter:image' content={avatarUrl}></meta>
       </Head>
-      <main className='h-screen w-screen grid place-items-center'>
-        <Card data={discord} />
+      <main className='h-screen w-screen flex justify-center items-center'>
+        <Card data={data?.data} config={config} />
       </main>
       <Text />
     </div>
@@ -56,7 +45,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
 
   return {
     props: {
-      favicon: avatarUrl(req, discord),
+      avatarUrl: avatarUrl(discord, 512),
       discord_id: discord?.data?.discord_user?.id,
       config: api.config,
       discord,

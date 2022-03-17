@@ -1,4 +1,4 @@
-import { LanyardResponse } from 'react-use-lanyard';
+import { LanyardData, LanyardResponse } from 'react-use-lanyard';
 
 export interface ConfigProps {
   [service: string]: {
@@ -21,3 +21,11 @@ export type DataContextType = {
 export type Children = {
   children: React.ReactNode;
 };
+
+export interface LanyardDataProps {
+  data: LanyardData;
+}
+
+export interface ConfigDataProps {
+  config: ConfigProps;
+}

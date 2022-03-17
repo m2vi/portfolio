@@ -1,11 +1,10 @@
 import api from '@utils/frontend/main';
-import { useData } from '@context/data';
 
 import Divider from '@components/Divider';
+import { LanyardDataProps } from '@utils/types';
 
-export const Activity = () => {
-  const { data } = useData();
-  const activity = api.adaptActivity(data?.lanyard?.data);
+export const Activity = ({ data }: LanyardDataProps) => {
+  const activity = api.adaptActivity(data);
   if (!activity) return null;
 
   return (
