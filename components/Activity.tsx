@@ -12,8 +12,8 @@ export const Activity = () => {
       <Divider className='my-4' />
       <div className='flex flex-col w-full'>
         <div className='w-full bg-primary-700 mb-2 last:mb-0 h-10/5 px-2 flex justify-start items-center rounded-8'>
-          <div className='aspect-1 h-8 mr-4'>
-            <img src={activity?.image} alt='Activity Large Image' height='40px' width='40px' sizes='6' className='rounded-5' />
+          <div className='h-8 w-8 mr-4 overflow-hidden rounded-5'>
+            <img src={activity?.image} alt='Activity Large Image' className='h-full w-full' />
           </div>
           <div className='text-left h-8 flex justify-center flex-col items-start overflow-hidden'>
             <p

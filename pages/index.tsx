@@ -1,13 +1,15 @@
 import Card from '@components/Card';
 import { useData } from '@context/data';
+import { b } from '@utils/index';
+
 import api from '@utils/backend/main';
 import { avatarUrl } from '@utils/discord';
-import { b, basicFetch } from '@utils/index';
+import { basicFetch } from '@utils/fetch';
 import type { GetServerSideProps, NextPage } from 'next';
-import { NextSeo } from 'next-seo';
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { useLanyard } from 'react-use-lanyard';
+import Text from '@components/Info';
 
 const Home: NextPage = ({ favicon, discord_id, config, discord }: any) => {
   const { data, update } = useData();
@@ -29,17 +31,18 @@ const Home: NextPage = ({ favicon, discord_id, config, discord }: any) => {
   return (
     <div>
       <Head>
+        <title>{data?.lanyard?.data?.discord_user?.username}</title>
         <link rel='icon' type='image/png' href={favicon} />
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content='https://card.m2vi.me/' />
+        <meta property='og:title' content='Portfolio - m2vi' />
+        <meta property='og:description' content='My portfolio. Actually only a card.' />
+        <meta property='og:image' content={favicon}></meta>
       </Head>
-      <NextSeo
-        title={data?.lanyard?.data?.discord_user?.username}
-        description="Hi, I'm m2vi and this is my portfolio page I made with Next.js, Typescript and Tailwind"
-        noindex={false}
-        nofollow={false}
-      />
       <main className='h-screen w-screen grid place-items-center'>
-        <Card initalDiscord={discord} />
+        <Card data={discord} />
       </main>
+      <Text />
     </div>
   );
 };
