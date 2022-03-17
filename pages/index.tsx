@@ -35,11 +35,17 @@ const Home: NextPage = ({ favicon, discord_id, config, discord }: any) => {
       <Head>
         <title>{data?.lanyard?.data?.discord_user?.username}</title>
         <link rel='icon' type='image/webp' href={favicon} />
-        <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://card.m2vi.me/' />
-        <meta property='og:title' content='Portfolio - m2vi' />
-        <meta property='og:description' content='My portfolio. Actually only a card.' />
-        <meta property='og:image' content={favicon}></meta>
+        <meta name='og:type' content='website' />
+        <meta name='og:url' content='https://card.m2vi.me/' />
+        <meta name='og:title' content='Portfolio - m2vi' />
+        <meta name='og:description' content={`My portfolio (it's just a simple card) website I made with Next.js and Tailwind`} />
+        <meta name='og:image' content={favicon}></meta>
+
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:site' content='https://card.m2vi.me/' />
+        <meta name='twitter:title' content='Portfolio - m2vi' />
+        <meta name='twitter:description' content={`My portfolio (it's just a simple card) website I made with Next.js and Tailwind`} />
+        <meta name='twitter:image' content={favicon}></meta>
       </Head>
       <main className='h-screen w-screen grid place-items-center'>
         <Card data={discord} />
