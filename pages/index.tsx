@@ -41,7 +41,7 @@ const Home: NextPage = ({ favicon, discord_id, config, discord }: any) => {
         <meta name='og:description' content={`My portfolio (it's just a simple card) website I made with Next.js and Tailwind`} />
         <meta name='og:image' content={favicon}></meta>
 
-        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:card' content='summary' />
         <meta name='twitter:site' content='https://card.m2vi.me/' />
         <meta name='twitter:title' content='Portfolio - m2vi' />
         <meta name='twitter:description' content={`My portfolio (it's just a simple card) website I made with Next.js and Tailwind`} />
